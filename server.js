@@ -1,6 +1,4 @@
 import express from 'express';
-import usersR from './routes/users.js';
-import url from './config/db.config.js';
 import  mongoose  from "mongoose";
 import cors from "cors";
 
@@ -11,7 +9,7 @@ app.use(cors());
 
 
 
-mongoose.connect(url,{
+mongoose.connect("mongodb+srv://shan:hdsapi@trail1.jlltk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
     useNewUrlParser: true,
     useUnifiedTopology: true
   },
@@ -57,10 +55,6 @@ var User_Details =mongoose.model('shana',schema);
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
-
-
-app.use('/users',usersR);
 
 
 
