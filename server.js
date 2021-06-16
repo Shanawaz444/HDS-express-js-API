@@ -191,10 +191,13 @@ app.post('/view_data',(req, res)=>{
 
 
 
-
+app.get('/',(req, res) => {
+    console.log('[TEST]!');
+    res.send("prooo working!");
+})
 app.get('/proo',(req, res) => {
     console.log('[TEST]!');
     res.send("prooo working!");
 })
 
-app.listen(process.env.PORT||port,()=>console.log(`Server running perfectly on port: http://localhost:${PORT}`));
+app.listen(process.env.PORT||port,()=>console.log(`Server running perfectly on port: http://localhost:${port}`));
